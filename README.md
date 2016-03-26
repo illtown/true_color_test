@@ -1,1 +1,1 @@
-terminal true color test
+Terminal true-color (24bit coded) support test

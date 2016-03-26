@@ -47,9 +47,9 @@ def prnt_clr_tbls():
     clr_seq_lst = gen_clr_seq(['r', 'g', 'b'])
     clr_codes = gen_clr_codes_lst(clr_nmbr=3, scale=5)
 
-    # color related vars
+    # terminal color related vars
     clr_str_hdr = '\x1b[48;2;'  # 48 is bg, 38 is symbol color
-    clr_str_ftr = '\x1b[0m'
+    clr_str_ftr = '\x1b[0m'     # reset color
     text = ' '
 
     for clr_seq in clr_seq_lst:
@@ -59,11 +59,11 @@ def prnt_clr_tbls():
             green = clr_seq.index('g')
             blue = clr_seq.index('b')
             clr_str = clr_str_hdr + \
-                    str(clr_code[red]) + ';' + \
-                    str(clr_code[green]) + ';' + \
-                    str(clr_code[blue]) + 'm' + \
-                    text + \
-                    clr_str_ftr
+                      str(clr_code[red]) + ';' + \
+                      str(clr_code[green]) + ';' + \
+                      str(clr_code[blue]) + 'm' + \
+                      text + \
+                      clr_str_ftr
             print(clr_str, end='')
             if clr_code[1] == clr_code[2] == 255:
                 print()

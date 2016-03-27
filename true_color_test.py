@@ -9,8 +9,8 @@ with font 8 and scale 5 is also ok.
 
 def gen_clr_seq(clr_lst):
     ''' gen all possible color seq '''
-    if len(clr_lst) == 0:
-        return ['']
+    if len(clr_lst) <= 1:
+        return [clr_lst[0]]
 
     rest_clr_lst = gen_clr_seq(clr_lst[1:])
 
